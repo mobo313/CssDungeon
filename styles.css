@@ -1,0 +1,195 @@
+/* Bookmark Button */
+.vod-bookmark-btn-container {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.vod-bookmark-btn {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vod-bookmark-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Bookmark Markers */
+.vod-bookmark-marker {
+    position: absolute;
+    bottom: 45px;
+    width: 10px;
+    height: 10px;
+    background: #9147ff;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 0 0 2px white;
+}
+
+.vod-bookmark-marker:hover {
+    background: #772ce8;
+    transform: translateX(-50%) scale(1.3);
+}
+
+.vod-bookmark-tooltip {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.9);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    white-space: nowrap;
+    display: none;
+    z-index: 30;
+    font-weight: bold;
+}
+
+.vod-bookmark-marker:hover .vod-bookmark-tooltip {
+    display: block;
+}
+
+/* Bookmark Manager */
+.vod-bookmark-manager {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #18181b;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1000;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.vod-bookmark-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.vod-bookmark-manager h2 {
+    margin-top: 0;
+}
+
+.vod-bookmark-manager ul {
+    list-style: none;
+    padding: 0;
+}
+
+.vod-bookmark-manager li {
+    padding: 10px;
+    border-bottom: 1px solid #3a3a3d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vod-bookmark-link {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.vod-bookmark-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.vod-bookmark-edit {
+    background: #9147ff;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.vod-bookmark-delete {
+    background: #e91916;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Animation */
+@keyframes bookmark-flash {
+    0% { box-shadow: 0 0 0 2px white; }
+    50% { box-shadow: 0 0 0 6px #9147ff; }
+    100% { box-shadow: 0 0 0 2px white; }
+}
+
+/* Manage Button */
+.vod-manage-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.vod-manage-btn:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Navigation Controls */
+.vod-bookmark-nav {
+    padding: 0 10px;
+}
+
+.vod-bookmark-nav-btn {
+    background: #9147ff;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.vod-bookmark-nav-btn:hover {
+    background: #772ce8;
+}
+
+/* Compact Bookmark List */
+.vod-bookmark-manager li {
+    padding: 8px 10px;
+}
+
+.vod-bookmark-link {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
+    display: inline-block;
+    vertical-align: middle;
+}
